@@ -3,61 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handwriting Book Publication</title>
+    <title>Handwriting Book Publication - Work From Home</title>
     <style>
         body {
-            background-color: #0d0d0d;
-            color: #f3e5ab;
+            background-color: #0b0b0b;
+            color: #f5e6ca;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
-        header {
-            background: linear-gradient(135deg, #1a1a1a, #000);
-            border-bottom: 2px solid #d4af37;
-            padding: 20px;
-        }
-        h1 {
-            color: #ffd700;
-            font-size: 28px;
-        }
-        .container {
-            padding: 20px;
-        }
-        .banner {
-            border: 2px solid #d4af37;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            background: #141414;
-        }
-        .btn {
-            background-color: #d4af37;
-            color: #000;
+        /* Top Bar */
+        .top-bar {
+            background: #111;
             padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #d4af37;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        .top-bar span {
+            color: #ffd700;
+            margin: 5px 10px;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1c1c1c, #000);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+        header h1 {
+            color: #ffd700;
+            font-size: 32px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        header p {
+            color: #fff;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        /* Navigation Menu */
+        nav {
+            background: #141414;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        nav a {
+            color: #000;
+            background: linear-gradient(135deg, #f39c12, #f1c40f);
+            padding: 8px 16px;
+            margin: 5px;
             text-decoration: none;
             font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #fff;
+            color: #000;
+        }
+        /* Main Banner */
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 30px 20px;
+            flex-wrap: wrap;
+            background: radial-gradient(circle, #222, #000);
+        }
+        .banner-text {
+            max-width: 600px;
+            text-align: left;
+            margin: 15px;
+        }
+        .banner-text h2 {
+            color: #ffd700;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .banner-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .features li {
+            font-size: 16px;
+            margin: 8px 0;
+            color: #f1c40f;
+        }
+        .apply-btn {
+            background: linear-gradient(135deg, #f39c12, #d4af37);
+            color: #000;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
             display: inline-block;
             margin-top: 15px;
+        }
+        /* QR Code Box */
+        .qr-box {
+            background: #181818;
+            border: 3px solid #d4af37;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 280px;
+            margin: 15px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        .qr-box h3 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+        .qr-box img {
+            width: 180px;
+            height: 180px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .upi-id {
+            color: #fff;
+            font-size: 14px;
+            margin-top: 10px;
+            background: #000;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px dashed #d4af37;
+        }
+        /* Admin Link Floating */
+        .admin-link {
+            text-align: center;
+            padding: 20px;
+        }
+        .admin-link a {
+            color: #d4af37;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+        /* Footer */
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 15px;
+            border-top: 2px solid #d4af37;
+            font-size: 14px;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <span>📞 +91 9460642427</span>
+        <span>✉️ meenamanish123@gmail.com</span>
+        <span>✨ Skill Bhi... Earning Bhi...</span>
+    </div>
+
+    <!-- Header -->
     <header>
         <h1>Handwriting Book Publication</h1>
         <p>Write Your Skills... Work From Home... Earn From Home...</p>
     </header>
-    <div class="container">
-        <div class="banner">
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Work Process</a>
+        <a href="#">Registration</a>
+        <a href="#">Payment</a>
+        <a href="#">FAQ</a>
+        <a href="#">Documents</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="main-container">
+        <div class="banner-text">
             <h2>Handwriting Work From Home</h2>
             <p>Apni Handwriting Skill ko Banaye Apni Income ka Zariya!</p>
-            <p><strong>Registration Fee: ₹499</strong></p>
-            <p>UPI ID: 9460642427@okhdfcbank</p>
-            <a href="admin" class="btn">Admin Panel</a>
+            <ul class="features">
+                <li>✔ 100% Genuine Work</li>
+                <li>✔ Flexible Timing</li>
+                <li>✔ No Investment (Registration Only)</li>
+            </ul>
+            <a href="#register" class="apply-btn">Apply Now ➔</a>
+        </div>
+
+        <!-- QR Code Card -->
+        <div class="qr-box">
+            <h3>Registration Fee</h3>
+            <h1 style="color: #fff; margin: 10px 0;">₹499</h1>
+            <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan QR Code & Pay</p>
+            <!-- Sample QR Placeholder or Image -->
+            <div style="background: #fff; width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #000; font-weight: bold; font-size: 12px; border-radius: 4px;">
+                [ QR CODE IMAGE ]
+            </div>
+            <div class="upi-id">UPI ID: 9460642427@okhdfcbank</div>
         </div>
     </div>
+
+    <!-- Admin Panel Quick Link -->
+    <div class="admin-link">
+        <a href="/admin">🔐 Go to Admin Control Panel</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Handwriting Book Publication. All Rights Reserved. | Designed with ❤️ for Your Success</p>
+    </footer>
+
 </body>
 </html>
