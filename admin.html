@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Handwriting Publication</title>
+    <style>
+        :root {
+            --bg-color: #0F0F0F;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-color: #FFFFFF;
+            --dark-card: #1A1A1A;
+            --border-gold: rgba(212, 175, 55, 0.3);
+        }
+        body {
+            margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color); font-family: Arial, sans-serif;
+        }
+        header {
+            background: #000; border-bottom: 2px solid var(--gold); padding: 15px; text-align: center;
+        }
+        h1 { color: var(--gold); font-size: 20px; margin: 0; }
+        .admin-container { max-width: 800px; margin: 20px auto; padding: 15px; background: var(--dark-card); border: 1px solid var(--border-gold); border-radius: 8px; }
+        .card { background: #111; border: 1px solid var(--border-gold); padding: 12px; margin-bottom: 12px; border-radius: 5px; }
+        input, select { width: 100%; padding: 10px; margin: 6px 0; background: #000; border: 1px solid var(--border-gold); color: #fff; border-radius: 4px; box-sizing: border-box; }
+        .btn-gold { background-color: var(--gold); color: #000; border: none; padding: 10px 15px; font-weight: bold; cursor: pointer; border-radius: 4px; width: 100%; margin-top: 5px; }
+        .btn-gold:hover { background-color: var(--gold-light); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🛡️ Admin Control Panel</h1>
+        <p style="color: var(--gold-light); font-size: 11px; margin: 3px 0 0 0;">Manage Approvals, Charges & Salaries</p>
+    </header>
+
+    <div class="admin-container">
+        
+        <!-- Section 1: Customer Approval -->
+        <div class="card">
+            <h3 style="color: var(--gold); font-size: 15px;">1. Customer Registration Approval</h3>
+            <p style="font-size: 13px;">Customer Mobile: <b>9876543210</b> | Status: <span style="color:orange;">Pending</span></p>
+            <button class="btn-gold" onclick="alert('Customer Approved Successfully!')">Approve Registration</button>
+        </div>
+
+        <!-- Section 2: Assign Custom Charges -->
+        <div class="card">
+            <h3 style="color: var(--gold); font-size: 15px;">2. Assign Custom Charges (Individual Customer)</h3>
+            <input type="text" id="adm-c-name" placeholder="Charge Name (e.g., Verification Fee)">
+            <input type="number" id="adm-c-amt" placeholder="Amount (e.g., 500)">
+            <select id="adm-c-status">
+                <option value="Pending">Status: Pending</option>
+                <option value="Paid">Status: Paid (Mark as Paid)</option>
+            </select>
+            <button class="btn-gold" onclick="saveAdminCharge()">Save & Assign to Customer</button>
+        </div>
+
+        <!-- Section 3: Salary Release & Full Refund Control -->
+        <div class="card">
+            <h3 style="color: var(--gold); font-size: 15px;">3. 15-Min Advance Salary & Charge Refund</h3>
+            <p style="font-size: 12px; color: #ccc;">Release 50% advance salary along with <b>full refund</b> of customer's paid custom charges.</p>
+            <button class="btn-gold" onclick="alert('50% Advance Salary & Charge Refund Dispatched!')">Release Advance & Refund</button>
+        </div>
+
+    </div>
+
+    <script>
+        function saveAdminCharge() {
+            let name = document.getElementById('adm-c-name').value;
+            let amt = document.getElementById('adm-c-amt').value;
+            let status = document.getElementById('adm-c-status').value;
+
+            if(!name || !amt) { alert('Kripya charge ka naam aur amount bharein!'); return; }
+
+            localStorage.setItem('admin_c_name', name);
+            localStorage.setItem('admin_c_amt', amt);
+            localStorage.setItem('admin_c_status', status);
+
+            alert('Custom charge successfully updated on customer dashboard!');
+        }
+    </script>
+</body>
+</html>
