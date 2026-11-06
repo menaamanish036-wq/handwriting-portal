@@ -127,6 +127,22 @@
             color: #ffd700;
             margin-top: 0;
         }
+        .qr-img-container {
+            background: #fff;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
         .upi-id {
             color: #fff;
             font-size: 14px;
@@ -143,10 +159,6 @@
             border-radius: 10px;
             margin: 20px 0;
             text-align: left;
-        }
-        .content-box h3 {
-            color: #ffd700;
-            margin-top: 0;
         }
         .grid-container {
             display: grid;
@@ -167,20 +179,16 @@
             margin-bottom: 10px;
             font-size: 16px;
         }
-        /* Direct Certificate View Box */
         .cert-frame {
             background: #fff;
             border: 2px solid #d4af37;
             border-radius: 5px;
-            height: 150px;
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
-            font-weight: bold;
-            font-size: 13px;
-            margin-bottom: 10px;
             overflow: hidden;
+            margin-bottom: 10px;
         }
         .cert-frame img {
             width: 100%;
@@ -268,8 +276,9 @@
         <div class="qr-box">
             <h3>Registration QR</h3>
             <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan & Pay Registration Fee</p>
-            <div style="background: #fff; width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #000; font-weight: bold; font-size: 12px; border-radius: 4px;">
-                [ QR CODE SCANNER ]
+            <div class="qr-img-container">
+                <!-- Aapka asli QR Code image yahan jud gaya hai -->
+                <img src="https://i.ibb.co/6P27k20/1000047736.jpg" alt="Payment QR Code">
             </div>
             <div class="upi-id">8504823316@thecardco</div>
         </div>
@@ -334,17 +343,17 @@
         </div>
     </div>
 
-    <!-- Documents & Certificates Section (Directly visible on page) -->
+    <!-- Documents & Certificates Section -->
     <div id="documents-section" class="section-container" style="display:none;">
         <div class="content-box">
             <h3 style="text-align: center;">📜 Company Certificates & Authentic Proofs 📜</h3>
-            <p style="text-align: center; color: #ccc;">Aapke samne company ke saare verified certificates aur government proofs direct dikh rahe hain:</p>
+            <p style="text-align: center; color: #ccc;">Aapke samne company ke saare verified certificates direct dikh rahe hain:</p>
             <div class="grid-container">
                 
                 <div class="card">
                     <h4>ISO 9001:2015 Certificate</h4>
                     <div class="cert-frame">
-                        [ ISO CERTIFICATE PREVIEW ]
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="ISO Certificate">
                     </div>
                     <p style="font-size: 12px; color: #aaa;">Quality Management Verified</p>
                 </div>
@@ -352,15 +361,15 @@
                 <div class="card">
                     <h4>MSME Udyam Registration</h4>
                     <div class="cert-frame">
-                        [ MSME REGISTRATION PREVIEW ]
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="MSME Certificate">
                     </div>
                     <p style="font-size: 12px; color: #aaa;">Govt. of India Recognized</p>
                 </div>
 
                 <div class="card">
-                    <h4>Company PAN & License</h4>
+                    <h4>Company PAN & Legal Proof</h4>
                     <div class="cert-frame">
-                        [ LEGAL PROOF PREVIEW ]
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="Legal Proof">
                     </div>
                     <p style="font-size: 12px; color: #aaa;">Authorized Enterprise</p>
                 </div>
@@ -368,7 +377,7 @@
                 <div class="card">
                     <h4>Handwriting Sample Work</h4>
                     <div class="cert-frame">
-                        [ WRITING SAMPLE PREVIEW ]
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="Sample Work">
                     </div>
                     <p style="font-size: 12px; color: #aaa;">Approved Format Guidelines</p>
                 </div>
@@ -411,7 +420,12 @@
     <div id="payment-section" class="section-container" style="display:none;">
         <div class="content-box" style="text-align:center;">
             <h3>Official UPI Payment Details</h3>
-            <p>Pay your selected project's registration fee to the official UPI ID:</p>
+            <p>Pay your selected project's registration fee by scanning the QR code below or using UPI ID:</p>
+            
+            <div style="background:#fff; width:180px; height:180px; margin: 15px auto; padding:5px; border-radius:4px;">
+                <img src="https://i.ibb.co/6P27k20/1000047736.jpg" alt="QR Code" style="width:100%; height:100%; object-fit:contain;">
+            </div>
+
             <div class="upi-id" style="font-size:20px; margin: 20px 0; color: #ffd700;">8504823316@thecardco</div>
             <p style="color:#ccc; font-size:14px;">After payment, your profile will be approved within 15 minutes and 50% advance salary will be released.</p>
         </div>
@@ -467,4 +481,5 @@
         }
     </script>
 </body>
-</html>
+    </html>
+    
