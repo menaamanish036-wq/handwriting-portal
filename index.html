@@ -180,32 +180,14 @@
             font-size: 16px;
         }
         .cert-frame {
-            background: #fff;
+            background: #222;
             border: 2px solid #d4af37;
             border-radius: 5px;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        .cert-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .card-btn {
-            background: #d4af37;
-            color: #000;
-            padding: 8px 15px;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            color: #ffd700;
             font-size: 13px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 5px;
-            cursor: pointer;
+            margin-bottom: 10px;
         }
         form input, form select, form textarea {
             width: 100%;
@@ -277,8 +259,13 @@
             <h3>Registration QR</h3>
             <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan & Pay Registration Fee</p>
             <div class="qr-img-container">
-                <!-- Aapka asli QR Code image yahan jud gaya hai -->
-                <img src="https://i.ibb.co/6P27k20/1000047736.jpg" alt="Payment QR Code">
+                <!-- Direct embedded QR data -->
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAAsACwBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=" alt="Payment QR Code" style="display:none;" id="fallbackQr">
+                <!-- Yahan aap apna QR code image file ya URL laga sakte hain, abhi ke liye text/clean box rakha hai -->
+                <div style="font-size:12px; font-weight:bold; color:#000; text-align:center; padding:10px;">
+                    📷 Scan QR Code<br>
+                    <strong>8504823316@thecardco</strong>
+                </div>
             </div>
             <div class="upi-id">8504823316@thecardco</div>
         </div>
@@ -347,39 +334,35 @@
     <div id="documents-section" class="section-container" style="display:none;">
         <div class="content-box">
             <h3 style="text-align: center;">📜 Company Certificates & Authentic Proofs 📜</h3>
-            <p style="text-align: center; color: #ccc;">Aapke samne company ke saare verified certificates direct dikh rahe hain:</p>
+            <p style="text-align: center; color: #ccc;">Verified Company Documents & Government Registrations:</p>
             <div class="grid-container">
                 
                 <div class="card">
                     <h4>ISO 9001:2015 Certificate</h4>
                     <div class="cert-frame">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="ISO Certificate">
+                        ✅ Verified & Approved<br><span style="font-size:11px; color:#aaa;">Quality Management System</span>
                     </div>
-                    <p style="font-size: 12px; color: #aaa;">Quality Management Verified</p>
                 </div>
 
                 <div class="card">
                     <h4>MSME Udyam Registration</h4>
                     <div class="cert-frame">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="MSME Certificate">
+                        ✅ Govt. Recognized Enterprise<br><span style="font-size:11px; color:#aaa;">Ministry of MSME, India</span>
                     </div>
-                    <p style="font-size: 12px; color: #aaa;">Govt. of India Recognized</p>
                 </div>
 
                 <div class="card">
-                    <h4>Company PAN & Legal Proof</h4>
+                    <h4>Company Legal Authorization</h4>
                     <div class="cert-frame">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="Legal Proof">
+                        ✅ Authorized Publication<br><span style="font-size:11px; color:#aaa;">Secure & Registered</span>
                     </div>
-                    <p style="font-size: 12px; color: #aaa;">Authorized Enterprise</p>
                 </div>
 
                 <div class="card">
                     <h4>Handwriting Sample Work</h4>
                     <div class="cert-frame">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="Sample Work">
+                        ✅ Standard Guidelines<br><span style="font-size:11px; color:#aaa;">Approved Format</span>
                     </div>
-                    <p style="font-size: 12px; color: #aaa;">Approved Format Guidelines</p>
                 </div>
 
             </div>
@@ -420,10 +403,10 @@
     <div id="payment-section" class="section-container" style="display:none;">
         <div class="content-box" style="text-align:center;">
             <h3>Official UPI Payment Details</h3>
-            <p>Pay your selected project's registration fee by scanning the QR code below or using UPI ID:</p>
+            <p>Pay your selected project's registration fee using the UPI ID below:</p>
             
-            <div style="background:#fff; width:180px; height:180px; margin: 15px auto; padding:5px; border-radius:4px;">
-                <img src="https://i.ibb.co/6P27k20/1000047736.jpg" alt="QR Code" style="width:100%; height:100%; object-fit:contain;">
+            <div style="background:#fff; width:200px; height:200px; margin: 15px auto; padding:10px; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#000; font-weight:bold; text-align:center;">
+                Scan & Pay via any UPI App<br><span style="font-size:11px; font-weight:normal;">(PhonePe / GooglePay / Paytm)</span>
             </div>
 
             <div class="upi-id" style="font-size:20px; margin: 20px 0; color: #ffd700;">8504823316@thecardco</div>
@@ -481,5 +464,5 @@
         }
     </script>
 </body>
-    </html>
-    
+        </html>
+        
