@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
         }
-        /* Top Bar */
         .top-bar {
             background: #111;
             padding: 10px 20px;
@@ -27,7 +26,6 @@
             color: #ffd700;
             margin: 5px 10px;
         }
-        /* Header */
         header {
             background: linear-gradient(135deg, #1c1c1c, #000);
             padding: 25px 20px;
@@ -45,7 +43,6 @@
             font-style: italic;
             margin-top: 8px;
         }
-        /* Navigation Menu */
         nav {
             background: #141414;
             display: flex;
@@ -68,7 +65,12 @@
             background: #fff;
             color: #000;
         }
-        /* Main Banner */
+        .section-container {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
         .main-container {
             display: flex;
             justify-content: space-around;
@@ -78,18 +80,14 @@
             background: radial-gradient(circle, #222, #000);
         }
         .banner-text {
-            max-width: 600px;
+            max-width: 500px;
             text-align: left;
             margin: 15px;
         }
         .banner-text h2 {
             color: #ffd700;
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 10px;
-        }
-        .banner-text p {
-            font-size: 18px;
-            line-height: 1.5;
         }
         .features {
             list-style: none;
@@ -114,7 +112,6 @@
             display: inline-block;
             margin-top: 15px;
         }
-        /* QR Code Box */
         .qr-box {
             background: #181818;
             border: 3px solid #d4af37;
@@ -129,13 +126,6 @@
             color: #ffd700;
             margin-top: 0;
         }
-        .qr-box img {
-            width: 180px;
-            height: 180px;
-            background: #fff;
-            padding: 5px;
-            border-radius: 5px;
-        }
         .upi-id {
             color: #fff;
             font-size: 14px;
@@ -145,17 +135,36 @@
             border-radius: 4px;
             border: 1px dashed #d4af37;
         }
-        /* Admin Link Floating */
-        .admin-link {
-            text-align: center;
-            padding: 20px;
+        .content-box {
+            background: #141414;
+            border: 2px solid #d4af37;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
         }
-        .admin-link a {
-            color: #d4af37;
-            text-decoration: underline;
-            font-size: 16px;
+        .content-box h3 {
+            color: #ffd700;
+            margin-top: 0;
         }
-        /* Footer */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #222;
+            border: 1px solid #d4af37;
+            color: #fff;
+            border-radius: 5px;
+        }
+        form button {
+            background: #d4af37;
+            color: #000;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
         footer {
             background: #111;
             text-align: center;
@@ -168,33 +177,29 @@
 </head>
 <body>
 
-    <!-- Top Contact Bar -->
     <div class="top-bar">
         <span>📞 +91 9460642427</span>
         <span>✉️ meenamanish123@gmail.com</span>
         <span>✨ Skill Bhi... Earning Bhi...</span>
     </div>
 
-    <!-- Header -->
     <header>
         <h1>Handwriting Book Publication</h1>
         <p>Write Your Skills... Work From Home... Earn From Home...</p>
     </header>
 
-    <!-- Navigation Menu -->
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Work Process</a>
-        <a href="#">Registration</a>
-        <a href="#">Payment</a>
-        <a href="#">FAQ</a>
-        <a href="#">Documents</a>
-        <a href="#">Contact Us</a>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About Us</a>
+        <a href="#process" onclick="showSection('process')">Work Process</a>
+        <a href="#register" onclick="showSection('register')">Registration</a>
+        <a href="#payment" onclick="showSection('payment')">Payment</a>
+        <a href="#documents" onclick="showSection('documents')">Documents</a>
+        <a href="/admin" target="_blank">Admin Panel</a>
     </nav>
 
-    <!-- Main Section -->
-    <div class="main-container">
+    <!-- Home Section -->
+    <div id="home-section" class="main-container">
         <div class="banner-text">
             <h2>Handwriting Work From Home</h2>
             <p>Apni Handwriting Skill ko Banaye Apni Income ka Zariya!</p>
@@ -203,15 +208,12 @@
                 <li>✔ Flexible Timing</li>
                 <li>✔ No Investment (Registration Only)</li>
             </ul>
-            <a href="#register" class="apply-btn">Apply Now ➔</a>
+            <a href="#register" onclick="showSection('register')" class="apply-btn">Apply Now ➔</a>
         </div>
-
-        <!-- QR Code Card -->
         <div class="qr-box">
             <h3>Registration Fee</h3>
             <h1 style="color: #fff; margin: 10px 0;">₹499</h1>
             <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan QR Code & Pay</p>
-            <!-- Sample QR Placeholder or Image -->
             <div style="background: #fff; width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #000; font-weight: bold; font-size: 12px; border-radius: 4px;">
                 [ QR CODE IMAGE ]
             </div>
@@ -219,15 +221,94 @@
         </div>
     </div>
 
-    <!-- Admin Panel Quick Link -->
-    <div class="admin-link">
-        <a href="/admin">🔐 Go to Admin Control Panel</a>
+    <!-- About Us Section -->
+    <div id="about-section" class="section-container" style="display:none;">
+        <div class="content-box">
+            <h3>About Us</h3>
+            <p>Handwriting Book Publication is a trusted platform that provides genuine work from home opportunities for people who have good handwriting skills. We structure multi-tier writing assignments, ensuring timely payments and complete transparency.</p>
+        </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Work Process Section -->
+    <div id="process-section" class="section-container" style="display:none;">
+        <div class="content-box">
+            <h3>Work Process</h3>
+            <p>1. Register on our portal by paying a one-time registration fee of ₹499.</p>
+            <p>2. Get your profile approved by the admin.</p>
+            <p>3. Receive handwriting assignments and submit completed work on time.</p>
+            <p>4. Earn weekly payouts directly to your account.</p>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <div id="register-section" class="section-container" style="display:none;">
+        <div class="content-box">
+            <h3>User Registration</h3>
+            <form id="regForm" onsubmit="handleRegister(event)">
+                <input type="text" id="fullname" placeholder="Full Name" required>
+                <input type="text" id="mobile" placeholder="Mobile Number" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <textarea id="address" placeholder="Complete Address" rows="3" required></textarea>
+                <button type="submit">Submit Registration</button>
+            </form>
+            <p id="regMsg" style="margin-top:10px; color:#ffd700;"></p>
+        </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="payment-section" class="section-container" style="display:none;">
+        <div class="content-box" style="text-align:center;">
+            <h3>Payment & UPI Details</h3>
+            <p>Pay the registration fee of ₹499 using the UPI ID below:</p>
+            <div class="upi-id" style="font-size:18px; margin: 20px 0;">9460642427@okhdfcbank</div>
+            <p style="color:#ccc; font-size:14px;">After payment, complete your registration form with your transaction details.</p>
+        </div>
+    </div>
+
+    <!-- Documents Section -->
+    <div id="documents-section" class="section-container" style="display:none;">
+        <div class="content-box">
+            <h3>Company Documents & Certificates</h3>
+            <p>✔ Authorized Handwriting Publication Enterprise</p>
+            <p>✔ ISO Certified Processes & Secure Payouts</p>
+        </div>
+    </div>
+
     <footer>
-        <p>© 2026 Handwriting Book Publication. All Rights Reserved. | Designed with ❤️ for Your Success</p>
+        <p>© 2026 Handwriting Book Publication. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('process-section').style.display = 'none';
+            document.getElementById('register-section').style.display = 'none';
+            document.getElementById('payment-section').style.display = 'none';
+            document.getElementById('documents-section').style.display = 'none';
+
+            document.getElementById(sectionId + '-section').style.display = sectionId === 'home' ? 'flex' : 'block';
+        }
+
+        async function handleRegister(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const mobile = document.getElementById('mobile').value;
+            const password = document.getElementById('password').value;
+            const address = document.getElementById('address').value;
+
+            try {
+                const res = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fullname, mobile, password, address })
+                });
+                const data = await res.json();
+                document.getElementById('regMsg').innerText = data.message || data.error;
+            } catch (err) {
+                document.getElementById('regMsg').innerText = "Registration failed!";
+            }
+        }
+    </script>
 </body>
 </html>
