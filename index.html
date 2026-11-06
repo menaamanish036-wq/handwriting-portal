@@ -1,279 +1,63 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handwriting Book Publication</title>
     <style>
-        :root {
-            --bg-color: #0F0F0F;
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --text-color: #FFFFFF;
-            --dark-card: #1A1A1A;
-            --border-gold: rgba(212, 175, 55, 0.3);
-        }
         body {
+            background-color: #0d0d0d;
+            color: #f3e5ab;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
         }
         header {
-            background: linear-gradient(to right, #000, #1A1A1A, #000);
-            border-bottom: 2px solid var(--gold);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            border-bottom: 2px solid #d4af37;
+            padding: 20px;
         }
-        .logo-area h1 {
-            color: var(--gold);
-            margin: 0;
-            font-size: 20px;
-        }
-        .logo-area p {
-            margin: 2px 0 0 0;
-            font-size: 10px;
-            color: var(--gold-light);
-        }
-        .nav-bar {
-            background-color: #141414;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px;
-            border-bottom: 1px solid var(--border-gold);
-        }
-        .nav-bar button {
-            background: transparent;
-            color: var(--gold-light);
-            border: 1px solid var(--border-gold);
-            padding: 6px 12px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .nav-bar button:hover, .nav-bar button.active {
-            background-color: var(--gold);
-            color: #000;
-            font-weight: bold;
+        h1 {
+            color: #ffd700;
+            font-size: 28px;
         }
         .container {
-            max-width: 800px;
+            padding: 20px;
+        }
+        .banner {
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
             margin: 20px auto;
-            padding: 15px;
-            background: var(--dark-card);
-            border: 1px solid var(--border-gold);
-            border-radius: 8px;
+            max-width: 600px;
+            background: #141414;
         }
-        .gateway-box {
-            text-align: center;
-            padding: 30px 10px;
-        }
-        .btn-gold {
-            background-color: var(--gold);
+        .btn {
+            background-color: #d4af37;
             color: #000;
-            border: none;
-            padding: 12px 25px;
-            font-size: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
             border-radius: 5px;
-            margin: 8px;
-            width: 100%;
-            max-width: 250px;
+            display: inline-block;
+            margin-top: 15px;
         }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            background: #000;
-            border: 1px solid var(--border-gold);
-            color: #fff;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .hidden { display: none; }
-        .badge-pending { color: #ff4d4d; font-weight: bold; }
-        .badge-paid { color: #2ecc71; font-weight: bold; }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="logo-area">
-            <h1>Handwriting Book</h1>
-            <p>Work From Home & Earn</p>
-        </div>
-        <div id="user-status-area" style="font-size: 12px;">
-            <span>Guest</span>
-        </div>
+        <h1>Handwriting Book Publication</h1>
+        <p>Write Your Skills... Work From Home... Earn From Home...</p>
     </header>
-
-    <!-- 10 Customer Menu Options -->
-    <div class="nav-bar" id="main-nav" style="display:none;">
-        <button onclick="switchTab('home')" class="active">1. Home</button>
-        <button onclick="switchTab('projects')">2. Projects</button>
-        <button onclick="switchTab('dashboard')">3. Dashboard</button>
-        <button onclick="switchTab('charges')">4. Charges</button>
-        <button onclick="switchTab('submit')">5. Submit Work</button>
-        <button onclick="switchTab('parcel')">6. Parcel</button>
-        <button onclick="switchTab('certificate')">7. Certificate</button>
-        <button onclick="switchTab('showcase')">8. Showcase</button>
-        <button onclick="switchTab('support')">9. Support</button>
-        <button onclick="logout()">10. Logout</button>
-    </div>
-
     <div class="container">
-        <!-- GATEWAY SCREEN -->
-        <div id="gateway-section" class="gateway-box">
-            <h2 style="color: var(--gold);">Welcome Portal</h2>
-            <p>Please select an option to continue:</p>
-            <button class="btn-gold" onclick="showAuth('register')">Register (New User)</button><br>
-            <button class="btn-gold" onclick="showAuth('login')">I have Login</button>
-        </div>
-
-        <!-- AUTH SECTION -->
-        <div id="auth-section" class="hidden">
-            <h3 id="auth-title" style="color: var(--gold);">Register</h3>
-            <input type="text" id="mobile" placeholder="Mobile Number (Unique ID)" required>
-            <input type="password" id="password" placeholder="Password" required>
-            
-            <div id="extra-reg-fields" class="hidden">
-                <input type="text" id="fullname" placeholder="Full Name">
-                <input type="text" id="address" placeholder="Delivery Address, Pin Code, District">
-                <p style="color: var(--gold-light); font-size: 12px; margin-top: 10px;">
-                    <b>UPI ID for Registration Fee:</b> <code>9460642427@okhdfcbank</code>
-                </p>
-                <label style="font-size: 12px; color: var(--gold-light);">Upload Payment Screenshot:</label>
-                <input type="file" id="reg-screenshot">
-            </div>
-
-            <button class="btn-gold" style="width:100%; margin-top:15px;" onclick="handleAuthSubmit()">Submit</button>
-            <p style="text-align: center; margin-top: 15px;"><a href="#" onclick="resetGateway()" style="color: var(--gold); font-size: 13px;">Back to Gateway</a></p>
-        </div>
-
-        <!-- TABS CONTENT -->
-        <div id="app-content" class="hidden">
-            <div id="tab-home" class="tab-content">
-                <h3 style="color: var(--gold);">Customer Home</h3>
-                <p>Aapka account successful approve ho chuka hai. Sabhi features ka anand lein.</p>
-            </div>
-            <div id="tab-projects" class="tab-content hidden">
-                <h3 style="color: var(--gold);">Handwriting Projects</h3>
-                <p>Yahan 4 alag-alag handwriting projects ઉપલબ્ધ hain.</p>
-            </div>
-            <div id="tab-dashboard" class="tab-content hidden">
-                <h3 style="color: var(--gold);">My Dashboard</h3>
-                <p>Status: <b>Approved</b></p>
-                <p>Advance Salary: <b>₹4,500</b> (15-Min Rule Applicable)</p>
-            </div>
-            <div id="tab-charges" class="tab-content hidden">
-                <h3 style="color: var(--gold);">My Charges</h3>
-                <p><b>Charge Name:</b> <span id="display-c-name">None Assigned Yet</span></p>
-                <p><b>Amount:</b> <span id="display-c-amt">₹0</span></p>
-                <p><b>Status:</b> <span id="display-c-status" class="badge-pending">Pending</span></p>
-                <p style="font-size: 11px; color: var(--gold-light); margin-top: 15px;">* Yeh charge 15 minute baad 50% advance salary ke sath pura refund kar diya jayega.</p>
-            </div>
-            <div id="tab-submit" class="tab-content hidden">
-                <h3 style="color: var(--gold);">Work Submission</h3>
-                <p>Upload your English Capital Letters (A-Z) handwriting work here:</p>
-                <input type="file">
-                <button class="btn-gold" style="width:100%; margin-top:10px;" onclick="alert('Work Submitted Successfully!')">Upload Work</button>
-            </div>
-            <div id="tab-parcel" class="tab-content hidden">
-                <h3 style="color: var(--gold);">Parcel Status</h3>
-                <p>Current Status: <b>Packing in Progress (No live tracking)</b></p>
-            </div>
-            <div id="tab-certificate" class="tab-content hidden">
-                <h3 style="color: var(--gold);">Company Certificate</h3>
-                <p>Udyam Registration Certificate is verified[span_0](start_span)[span_0](end_span).</p>
-            </div>
-            <div id="tab-showcase" class="tab-content hidden">
-                <h3 style="color: var(--gold);">Work Showcase</h3>
-                <p>Sample gallery of completed writing works.</p>
-            </div>
-            <div id="tab-support" class="tab-content hidden">
-                <h3 style="color: var(--gold);">Support & Contact</h3>
-                <p>WhatsApp Helpdesk: <b>+91 9460642427</b>[span_1](start_span)[span_1](end_span)</p>
-            </div>
+        <div class="banner">
+            <h2>Handwriting Work From Home</h2>
+            <p>Apni Handwriting Skill ko Banaye Apni Income ka Zariya!</p>
+            <p><strong>Registration Fee: ₹499</strong></p>
+            <p>UPI ID: 9460642427@okhdfcbank</p>
+            <a href="admin" class="btn">Admin Panel</a>
         </div>
     </div>
-
-    <script>
-        let authMode = '';
-
-        function showAuth(mode) {
-            authMode = mode;
-            document.getElementById('gateway-section').classList.add('hidden');
-            document.getElementById('auth-section').classList.remove('hidden');
-            if(mode === 'register') {
-                document.getElementById('auth-title').innerText = 'New Customer Registration';
-                document.getElementById('extra-reg-fields').classList.remove('hidden');
-            } else {
-                document.getElementById('auth-title').innerText = 'Customer Login';
-                document.getElementById('extra-reg-fields').classList.add('hidden');
-            }
-        }
-
-        function resetGateway() {
-            document.getElementById('auth-section').classList.add('hidden');
-            document.getElementById('gateway-section').classList.remove('hidden');
-        }
-
-        function handleAuthSubmit() {
-            let mobile = document.getElementById('mobile').value;
-            if(!mobile) { alert('Mobile number enter karna anivarya hai!'); return; }
-            
-            localStorage.setItem('customer_logged', 'true');
-            localStorage.setItem('customer_mobile', mobile);
-
-            alert(authMode === 'register' ? 'Registration Submitted! Awaiting Admin Approval.' : 'Login Successful!');
-            loadAppSession();
-        }
-
-        function loadAppSession() {
-            document.getElementById('gateway-section').classList.add('hidden');
-            document.getElementById('auth-section').classList.add('hidden');
-            document.getElementById('main-nav').style.display = 'flex';
-            document.getElementById('app-content').classList.remove('hidden');
-            document.getElementById('user-status-area').innerHTML = `<span>📱 ${localStorage.getItem('customer_mobile')}</span>`;
-
-            // Load custom charges if set by admin
-            if(localStorage.getItem('admin_c_name')) {
-                document.getElementById('display-c-name').innerText = localStorage.getItem('admin_c_name');
-                document.getElementById('display-c-amt').innerText = '₹' + localStorage.getItem('admin_c_amt');
-                let st = localStorage.getItem('admin_c_status') || 'Pending';
-                let stElem = document.getElementById('display-c-status');
-                stElem.innerText = st;
-                stElem.className = st === 'Paid' ? 'badge-paid' : 'badge-pending';
-            }
-        }
-
-        function logout() {
-            localStorage.removeItem('customer_logged');
-            location.reload();
-        }
-
-        function switchTab(tabName) {
-            let tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(t => t.classList.add('hidden'));
-            document.getElementById('tab-' + tabName).classList.remove('hidden');
-
-            let buttons = document.querySelectorAll('.nav-bar button');
-            buttons.forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-
-        window.onload = function() {
-            if(localStorage.getItem('customer_logged') === 'true') {
-                loadAppSession();
-            }
-        }
-    </script>
 </body>
-              </html>
-              
+</html>
