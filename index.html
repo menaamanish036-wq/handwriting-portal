@@ -3,242 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handwriting Book Publication - Work From Home</title>
+    <title>Handwriting Book Publication</title>
     <style>
-        body {
-            background-color: #0b0b0b;
-            color: #f5e6ca;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .top-bar {
-            background: #111;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #d4af37;
-            flex-wrap: wrap;
-            font-size: 14px;
-        }
-        .top-bar span {
-            color: #ffd700;
-            margin: 5px 10px;
-        }
-        header {
-            background: linear-gradient(135deg, #1c1c1c, #000);
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 3px solid #d4af37;
-        }
-        header h1 {
-            color: #ffd700;
-            font-size: 28px;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-        header p {
-            color: #fff;
-            font-style: italic;
-            margin-top: 8px;
-            font-size: 13px;
-        }
-        nav {
-            background: #141414;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 10px;
-            border-bottom: 2px solid #d4af37;
-        }
-        nav button {
-            color: #000;
-            background: linear-gradient(135deg, #f39c12, #f1c40f);
-            padding: 8px 14px;
-            margin: 5px;
-            font-weight: bold;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            font-size: 13px;
-            transition: 0.3s;
-        }
-        nav button:hover {
-            background: #fff;
-            color: #000;
-        }
-        .section-container {
-            padding: 25px 15px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .main-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 25px 15px;
-            flex-wrap: wrap;
-            background: radial-gradient(circle, #222, #000);
-        }
-        .banner-text {
-            max-width: 450px;
-            text-align: left;
-            margin: 15px;
-        }
-        .banner-text h2 {
-            color: #ffd700;
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-        .features {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-        }
-        .features li {
-            font-size: 14px;
-            margin: 6px 0;
-            color: #f1c40f;
-        }
-        .apply-btn {
-            background: linear-gradient(135deg, #f39c12, #d4af37);
-            color: #000;
-            padding: 10px 20px;
-            font-size: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .qr-box {
-            background: #181818;
-            border: 3px solid #d4af37;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            width: 250px;
-            margin: 15px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
-        .qr-box h3 {
-            color: #ffd700;
-            margin-top: 0;
-            font-size: 16px;
-        }
-        .qr-display {
-            background: #fff;
-            color: #000;
-            width: 170px;
-            height: 170px;
-            margin: 0 auto;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border: 2px solid #d4af37;
-            font-weight: bold;
-            font-size: 12px;
-        }
-        .upi-id {
-            color: #fff;
-            font-size: 13px;
-            margin-top: 10px;
-            background: #000;
-            padding: 6px;
-            border-radius: 4px;
-            border: 1px dashed #d4af37;
-        }
-        .content-box {
-            background: #141414;
-            border: 2px solid #d4af37;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 15px 0;
-            text-align: left;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .card {
-            background: #1c1c1c;
-            border: 1px solid #d4af37;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-        }
-        .card h4 {
-            color: #ffd700;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        .card p {
-            font-size: 12px;
-            color: #ccc;
-            line-height: 1.4;
-        }
-        .cert-badge {
-            background: #222;
-            border: 2px solid #d4af37;
-            border-radius: 6px;
-            padding: 12px;
-            text-align: center;
-            color: #ffd700;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .card-btn {
-            background: #d4af37;
-            color: #000;
-            padding: 6px 12px;
-            font-weight: bold;
-            font-size: 12px;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            margin-top: 6px;
-        }
-        form input, form select, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            background: #222;
-            border: 1px solid #d4af37;
-            color: #fff;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-        form button {
-            background: #d4af37;
-            color: #000;
-            padding: 12px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 15px;
-            margin-top: 10px;
-        }
-        footer {
-            background: #111;
-            text-align: center;
-            padding: 15px;
-            border-top: 2px solid #d4af37;
-            font-size: 13px;
-            color: #aaa;
-        }
+        body { background-color: #0b0b0b; color: #f5e6ca; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .top-bar { background: #111; padding: 10px; display: flex; justify-content: space-between; border-bottom: 2px solid #d4af37; font-size: 13px; }
+        .top-bar span { color: #ffd700; margin: 0 10px; }
+        header { background: #1c1c1c; padding: 20px; text-align: center; border-bottom: 3px solid #d4af37; }
+        header h1 { color: #ffd700; font-size: 26px; margin: 0; }
+        header p { color: #fff; font-size: 13px; margin-top: 5px; }
+        nav { background: #141414; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px; border-bottom: 2px solid #d4af37; }
+        nav button { color: #000; background: linear-gradient(135deg, #f39c12, #f1c40f); padding: 8px 12px; margin: 4px; font-weight: bold; border-radius: 4px; border: none; cursor: pointer; font-size: 12px; }
+        .section-container { padding: 20px 15px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .main-container { display: flex; justify-content: space-around; align-items: center; padding: 20px; flex-wrap: wrap; }
+        .banner-text { max-width: 400px; text-align: left; margin: 10px; }
+        .banner-text h2 { color: #ffd700; font-size: 24px; margin-bottom: 10px; }
+        .features { list-style: none; padding: 0; margin: 10px 0; font-size: 14px; color: #f1c40f; }
+        .features li { margin: 6px 0; }
+        .apply-btn { background: #d4af37; color: #000; padding: 10px 20px; font-size: 15px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; display: inline-block; text-decoration: none; }
+        .qr-box { background: #181818; border: 2px solid #d4af37; padding: 15px; border-radius: 8px; text-align: center; width: 240px; margin: 10px; }
+        .qr-box h3 { color: #ffd700; margin: 0 0 10px 0; font-size: 15px; }
+        .qr-placeholder { background: #fff; color: #000; width: 150px; height: 150px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; font-size: 11px; border-radius: 4px; }
+        .upi-id { color: #fff; font-size: 13px; margin-top: 10px; background: #000; padding: 5px; border-radius: 4px; border: 1px dashed #d4af37; }
+        .content-box { background: #141414; border: 2px solid #d4af37; padding: 20px; border-radius: 8px; margin: 15px 0; text-align: left; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 15px; }
+        .card { background: #1c1c1c; border: 1px solid #d4af37; border-radius: 6px; padding: 12px; text-align: center; }
+        .card h4 { color: #ffd700; margin: 0 0 8px 0; font-size: 14px; }
+        .card p { font-size: 12px; color: #ccc; line-height: 1.4; }
+        .card-btn { background: #d4af37; color: #000; padding: 6px 10px; font-weight: bold; font-size: 11px; border-radius: 4px; border: none; cursor: pointer; margin-top: 8px; display: inline-block; }
+        form input, form select, form textarea { width: 100%; padding: 10px; margin: 6px 0; background: #222; border: 1px solid #d4af37; color: #fff; border-radius: 4px; box-sizing: border-box; font-size: 13px; }
+        form button { background: #d4af37; color: #000; padding: 10px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 14px; margin-top: 10px; }
+        footer { background: #111; text-align: center; padding: 10px; border-top: 2px solid #d4af37; font-size: 12px; color: #aaa; }
     </style>
 </head>
 <body>
@@ -246,7 +40,6 @@
     <div class="top-bar">
         <span>📞 +91 9460642427</span>
         <span>✉️ meenamanish123@gmail.com</span>
-        <span>✨ Skill Bhi... Earning Bhi...</span>
     </div>
 
     <header>
@@ -256,8 +49,8 @@
 
     <nav>
         <button onclick="showSection('home')">Home</button>
-        <button onclick="showSection('projects')">Writing Projects</button>
-        <button onclick="showSection('documents')">Documents & Certificates</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('documents')">Documents</button>
         <button onclick="showSection('about')">About Us</button>
         <button onclick="showSection('register')">Registration</button>
         <button onclick="showSection('payment')">Payment</button>
@@ -266,23 +59,20 @@
     <!-- Home Section -->
     <div id="home-section" class="main-container">
         <div class="banner-text">
-            <h2>Handwriting Work From Home</h2>
+            <h2>Work From Home</h2>
             <p>Apni Handwriting Skill ko Banaye Apni Income ka Zariya!</p>
             <ul class="features">
                 <li>✔ 100% Genuine Work From Home</li>
                 <li>✔ 50% Advance Salary within 15 Mins</li>
                 <li>✔ 100% Refundable Registration Fee</li>
-                <li>✔ Flexible Working Hours</li>
             </ul>
             <button onclick="showSection('projects')" class="apply-btn">Select Writing Project ➔</button>
         </div>
         <div class="qr-box">
             <h3>Registration QR</h3>
-            <p style="font-size: 11px; color: #ccc; margin-bottom: 8px;">Scan & Pay Registration Fee</p>
-            <div class="qr-display">
-                <span style="font-size: 22px;">📱</span>
-                <span style="font-size: 11px; margin-top: 4px;">SCAN VIA UPI</span>
-                <span style="font-size: 9px; color: #555;">(GPay / PhonePe / Paytm)</span>
+            <div class="qr-placeholder">
+                <span>📱 SCAN QR</span>
+                <span style="font-size: 9px; color: #666; margin-top: 3px;">(GPay/PhonePe/Paytm)</span>
             </div>
             <div class="upi-id">8504823316@thecardco</div>
         </div>
@@ -291,132 +81,85 @@
     <!-- Writing Projects Section -->
     <div id="projects-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3 style="text-align: center; color: #ffd700;">🏦 WORK FROM HOME WRITING PROJECTS 🏡</h3>
-            <p style="text-align: center; color:#ccc; font-size: 13px;">Select your preferred writing project plan below:</p>
+            <h3 style="text-align: center; color: #ffd700;">🏦 WRITING PROJECT PLANS 🏡</h3>
             <div class="grid-container">
-                
                 <div class="card">
-                    <h4>📚 Project 1️⃣</h4>
-                    <p>
-                        <strong>Pages:</strong> 50 (100 Back)<br>
-                        <strong>Time:</strong> 7 Days<br>
-                        <strong>Salary:</strong> ₹25,000/-<br>
-                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹499/- (Refundable)</span>
-                    </p>
+                    <h4>Project 1️⃣</h4>
+                    <p><strong>Pages:</strong> 50 (100 Back)<br><strong>Time:</strong> 7 Days<br><strong>Salary:</strong> ₹25,000/-<br><span style="color:#ffd700;"><strong>Fee:</strong> ₹499/-</span></p>
                     <button onclick="selectProject('Project 1 (₹499 Fee)')" class="card-btn">Apply Now</button>
                 </div>
-
                 <div class="card">
-                    <h4>📚 Project 2️⃣</h4>
-                    <p>
-                        <strong>Pages:</strong> 90 (180 Back)<br>
-                        <strong>Time:</strong> 10 Days<br>
-                        <strong>Salary:</strong> ₹30,000/-<br>
-                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹750/- (Refundable)</span>
-                    </p>
+                    <h4>Project 2️⃣</h4>
+                    <p><strong>Pages:</strong> 90 (180 Back)<br><strong>Time:</strong> 10 Days<br><strong>Salary:</strong> ₹30,000/-<br><span style="color:#ffd700;"><strong>Fee:</strong> ₹750/-</span></p>
                     <button onclick="selectProject('Project 2 (₹750 Fee)')" class="card-btn">Apply Now</button>
                 </div>
-
                 <div class="card">
-                    <h4>📚 Project 3️⃣</h4>
-                    <p>
-                        <strong>Pages:</strong> 120 (240 Back)<br>
-                        <strong>Time:</strong> 15 Days<br>
-                        <strong>Salary:</strong> ₹35,000/-<br>
-                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹1,199/- (Refundable)</span>
-                    </p>
+                    <h4>Project 3️⃣</h4>
+                    <p><strong>Pages:</strong> 120 (240 Back)<br><strong>Time:</strong> 15 Days<br><strong>Salary:</strong> ₹35,000/-<br><span style="color:#ffd700;"><strong>Fee:</strong> ₹1,199/-</span></p>
                     <button onclick="selectProject('Project 3 (₹1199 Fee)')" class="card-btn">Apply Now</button>
                 </div>
-
                 <div class="card">
-                    <h4>📚 Project 4️⃣</h4>
-                    <p>
-                        <strong>Pages:</strong> 190 (380 Back)<br>
-                        <strong>Time:</strong> 26 Days<br>
-                        <strong>Salary:</strong> ₹40,000/-<br>
-                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹1,499/- (Refundable)</span>
-                    </p>
+                    <h4>Project 4️⃣</h4>
+                    <p><strong>Pages:</strong> 190 (380 Back)<br><strong>Time:</strong> 26 Days<br><strong>Salary:</strong> ₹40,000/-<br><span style="color:#ffd700;"><strong>Fee:</strong> ₹1,499/-</span></p>
                     <button onclick="selectProject('Project 4 (₹1499 Fee)')" class="card-btn">Apply Now</button>
                 </div>
-
-            </div>
-            <div style="margin-top: 20px; padding: 10px; background: #000; border: 1px dashed #d4af37; border-radius: 5px; text-align: center;">
-                <p style="color: #5cf55c; margin: 4px 0; font-size: 13px;">⚖️💵 Registration fee is 100% Refundable with your salary.</p>
-                <p style="color: #ffd700; margin: 4px 0; font-size: 13px;">🔰💵 Get 50% Advance Salary within 15 minutes after registration completion!</p>
             </div>
         </div>
     </div>
 
-    <!-- Documents & Certificates Section -->
+    <!-- Documents Section -->
     <div id="documents-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3 style="text-align: center; color: #ffd700;">📜 Company Certificates & Authentic Proofs 📜</h3>
-            <p style="text-align: center; color: #ccc; font-size: 13px;">Verified Company Documents & Government Registrations:</p>
+            <h3 style="text-align: center; color: #ffd700;">📜 Company Certificates 📜</h3>
             <div class="grid-container">
-                <div class="card">
-                    <h4>ISO 9001:2015</h4>
-                    <div class="cert-badge">✅ VERIFIED & APPROVED<br><span style="font-size:11px; color:#aaa; font-weight:normal;">Quality Management System</span></div>
-                </div>
-                <div class="card">
-                    <h4>MSME Udyam</h4>
-                    <div class="cert-badge">✅ GOVT. RECOGNIZED<br><span style="font-size:11px; color:#aaa; font-weight:normal;">Ministry of MSME, India</span></div>
-                </div>
-                <div class="card">
-                    <h4>Legal Authorization</h4>
-                    <div class="cert-badge">✅ AUTHORIZED PUBLICATION<br><span style="font-size:11px; color:#aaa; font-weight:normal;">Secure & Registered</span></div>
-                </div>
-                <div class="card">
-                    <h4>Writing Guidelines</h4>
-                    <div class="cert-badge">✅ APPROVED FORMAT<br><span style="font-size:11px; color:#aaa; font-weight:normal;">Standard Samples</span></div>
-                </div>
+                <div class="card"><h4>ISO 9001:2015</h4><p>Quality Management System Verified</p></div>
+                <div class="card"><h4>MSME Udyam</h4><p>Govt. of India Recognized Enterprise</p></div>
+                <div class="card"><h4>Legal Proof</h4><p>Authorized Publication License</p></div>
+                <div class="card"><h4>Writing Proofs</h4><p>Standard Approved Guidelines</p></div>
             </div>
         </div>
     </div>
 
-    <!-- About Us Section -->
+    <!-- About Section -->
     <div id="about-section" class="section-container" style="display:none;">
         <div class="content-box">
             <h3 style="color:#ffd700;">About Our Publication</h3>
-            <p>Handwriting Book Publication provides genuine home-based writing assignments across India. We ensure instant registration processing, 50% advance salary transfer, and 100% refundable registration charges upon project completion.</p>
+            <p>Handwriting Book Publication provides genuine home-based writing assignments across India with 50% advance salary transfer and 100% refundable registration charges.</p>
         </div>
     </div>
 
     <!-- Registration Section -->
     <div id="register-section" class="section-container" style="display:none;">
-        <div class="content-box" style="max-width:450px; margin:0 auto;">
-            <h3 style="text-align: center; color:#ffd700;">User Registration Form</h3>
+        <div class="content-box" style="max-width:400px; margin:0 auto;">
+            <h3 style="text-align: center; color:#ffd700;">User Registration</h3>
             <form id="regForm" onsubmit="handleRegister(event)">
                 <input type="text" id="fullname" placeholder="Full Name" required>
                 <input type="text" id="mobile" placeholder="Mobile Number" required>
                 <input type="password" id="password" placeholder="Password" required>
                 <select id="selectedProject" required>
                     <option value="" disabled selected>Select Writing Project Plan</option>
-                    <option value="Project 1 (₹499 Fee)">Project 1: 50 Pages | Salary ₹25,000 | Fee ₹499</option>
-                    <option value="Project 2 (₹750 Fee)">Project 2: 90 Pages | Salary ₹30,000 | Fee ₹750</option>
-                    <option value="Project 3 (₹1199 Fee)">Project 3: 120 Pages | Salary ₹35,000 | Fee ₹1199</option>
-                    <option value="Project 4 (₹1499 Fee)">Project 4: 190 Pages | Salary ₹40,000 | Fee ₹1499</option>
+                    <option value="Project 1 (₹499 Fee)">Project 1: ₹25,000 | Fee ₹499</option>
+                    <option value="Project 2 (₹750 Fee)">Project 2: ₹30,000 | Fee ₹750</option>
+                    <option value="Project 3 (₹1199 Fee)">Project 3: ₹35,000 | Fee ₹1199</option>
+                    <option value="Project 4 (₹1499 Fee)">Project 4: ₹40,000 | Fee ₹1499</option>
                 </select>
-                <textarea id="address" placeholder="Complete Postal Address" rows="3" required></textarea>
+                <textarea id="address" placeholder="Complete Postal Address" rows="2" required></textarea>
                 <button type="submit">Submit & Proceed to Payment</button>
             </form>
-            <p id="regMsg" style="margin-top:10px; color:#ffd700; text-align:center; font-size:14px;"></p>
+            <p id="regMsg" style="margin-top:10px; color:#ffd700; text-align:center; font-size:13px;"></p>
         </div>
     </div>
 
     <!-- Payment Section -->
     <div id="payment-section" class="section-container" style="display:none;">
-        <div class="content-box" style="text-align:center; max-width:450px; margin:0 auto;">
-            <h3 style="color:#ffd700;">Official UPI Payment Details</h3>
-            <p style="font-size: 13px;">Pay your selected project's registration fee using the UPI ID below:</p>
-            
-            <div class="qr-display" style="width:190px; height:190px; margin: 15px auto;">
-                <span style="font-size: 28px;">💳</span>
-                <span style="font-size: 11px; font-weight: bold; margin-top: 5px;">SCAN & PAY VIA UPI</span>
-                <span style="font-size: 10px; color: #555;">(GooglePay / PhonePe / Paytm)</span>
+        <div class="content-box" style="text-align:center; max-width:400px; margin:0 auto;">
+            <h3 style="color:#ffd700;">UPI Payment Details</h3>
+            <p style="font-size: 12px;">Scan the QR or use UPI ID to pay registration fee:</p>
+            <div class="qr-placeholder" style="width:160px; height:160px; margin: 10px auto;">
+                <span>📱 SCAN & PAY</span>
             </div>
-
-            <div class="upi-id" style="font-size:18px; margin: 15px 0; color: #ffd700; font-weight:bold;">8504823316@thecardco</div>
-            <p style="color:#ccc; font-size:12px;">After payment, your profile will be approved within 15 minutes and 50% advance salary will be released.</p>
+            <div class="upi-id" style="font-size:16px; margin: 10px 0; color: #ffd700; font-weight:bold;">8504823316@thecardco</div>
+            <p style="color:#ccc; font-size:11px;">Profile will be approved within 15 minutes after payment.</p>
         </div>
     </div>
 
@@ -426,18 +169,15 @@
 
     <script>
         function showSection(sectionId) {
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('projects-section').style.display = 'none';
-            document.getElementById('documents-section').style.display = 'none';
-            document.getElementById('about-section').style.display = 'none';
-            document.getElementById('register-section').style.display = 'none';
-            document.getElementById('payment-section').style.display = 'none';
-
-            let activeEl = document.getElementById(sectionId + '-section');
+            ['home', 'projects', 'documents', 'about', 'register', 'payment'].forEach(id => {
+                let el = document.getElementById(id + '-section');
+                if(el) el.style.display = 'none';
+            });
             if (sectionId === 'home') {
                 document.getElementById('home-section').style.display = 'flex';
-            } else if (activeEl) {
-                activeEl.style.display = 'block';
+            } else {
+                let target = document.getElementById(sectionId + '-section');
+                if(target) target.style.display = 'block';
             }
             window.scrollTo(0, 0);
         }
@@ -462,16 +202,13 @@
                     body: JSON.stringify({ fullname, mobile, password, address, project })
                 });
                 const data = await res.json();
-                document.getElementById('regMsg').innerText = data.message || "Registration successful! Proceed to payment.";
-                if(res.ok) {
-                    setTimeout(() => showSection('payment'), 1500);
-                }
+                document.getElementById('regMsg').innerText = data.message || "Registration successful!";
+                setTimeout(() => showSection('payment'), 1200);
             } catch (err) {
-                document.getElementById('regMsg').innerText = "Registration successful! Redirecting to payment...";
-                setTimeout(() => showSection('payment'), 1500);
+                document.getElementById('regMsg').innerText = "Redirecting to payment...";
+                setTimeout(() => showSection('payment'), 1200);
             }
         }
     </script>
 </body>
-    </html>
-    
+</html>
