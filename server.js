@@ -1,12 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const mongoURI = "mongodb+srv://handwriting_admin:admin1234@handwritingdb.gutf1eee.mongodb.net/handwriting_publication?retryWrites=true&w=majority";
+// Static files (frontend ke liye)
+app.use(express.static(path.join(__dirname)));
+
+// MongoDB Connection
+const mongoURI = process.env.MONGO_URI || "mongodb+srv://handwriting_admin:admin1234@handwritingdb.gutf1eee.mongodb.net/handwriting_publication?retryWrites=true&w=majority";
 
 mongoose.connect(mongoURI)
     .then(() => console.log("MongoDB Connected Successfully!"))
@@ -27,6 +32,7 @@ const CustomerSchema = new mongoose.Schema({
 
 const Customer = mongoose.model('Customer', CustomerSchema);
 
+// API Routes
 app.post('/api/register', async (req, res) => {
     try {
         const { mobile, password, fullname, address } = req.body;
@@ -47,6 +53,15 @@ app.post('/api/login', async (req, res) => {
     } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
+// Main Website Route (index.html)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Admin Panel Route (admin.html)
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  
