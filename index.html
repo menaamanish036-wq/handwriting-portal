@@ -34,7 +34,7 @@
         }
         header h1 {
             color: #ffd700;
-            font-size: 32px;
+            font-size: 30px;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
@@ -42,6 +42,7 @@
             color: #fff;
             font-style: italic;
             margin-top: 8px;
+            font-size: 14px;
         }
         nav {
             background: #141414;
@@ -54,12 +55,13 @@
         nav a {
             color: #000;
             background: linear-gradient(135deg, #f39c12, #f1c40f);
-            padding: 8px 16px;
+            padding: 8px 14px;
             margin: 5px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 13px;
             transition: 0.3s;
         }
         nav a:hover {
@@ -68,7 +70,7 @@
         }
         .section-container {
             padding: 30px 20px;
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
             text-align: center;
         }
@@ -81,13 +83,13 @@
             background: radial-gradient(circle, #222, #000);
         }
         .banner-text {
-            max-width: 500px;
+            max-width: 450px;
             text-align: left;
             margin: 15px;
         }
         .banner-text h2 {
             color: #ffd700;
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 10px;
         }
         .features {
@@ -96,7 +98,7 @@
             margin: 20px 0;
         }
         .features li {
-            font-size: 16px;
+            font-size: 15px;
             margin: 8px 0;
             color: #f1c40f;
         }
@@ -104,7 +106,7 @@
             background: linear-gradient(135deg, #f39c12, #d4af37);
             color: #000;
             padding: 12px 25px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             border: none;
             border-radius: 5px;
@@ -119,7 +121,7 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            width: 280px;
+            width: 260px;
             margin: 15px;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
@@ -129,23 +131,24 @@
         }
         .qr-img-container {
             background: #fff;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto;
             padding: 5px;
-            border-radius: 4px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
         }
-        .qr-img-container canvas, .qr-img-container img {
+        .qr-img-container img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
         .upi-id {
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
             margin-top: 10px;
             background: #000;
             padding: 6px;
@@ -177,22 +180,46 @@
         .card h4 {
             color: #ffd700;
             margin-bottom: 10px;
-            font-size: 16px;
+            font-size: 15px;
+        }
+        .card p {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.5;
         }
         .cert-frame {
-            background: #222;
+            background: #000;
             border: 2px solid #d4af37;
-            border-radius: 5px;
-            padding: 15px;
-            text-align: center;
-            color: #ffd700;
-            font-size: 13px;
+            border-radius: 6px;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             margin-bottom: 10px;
+        }
+        .cert-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fff;
+        }
+        .card-btn {
+            background: #d4af37;
+            color: #000;
+            padding: 7px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 8px;
+            cursor: pointer;
         }
         form input, form select, form textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin: 8px 0;
             background: #222;
             border: 1px solid #d4af37;
             color: #fff;
@@ -208,19 +235,18 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            font-size: 16px;
+            font-size: 15px;
+            margin-top: 10px;
         }
         footer {
             background: #111;
             text-align: center;
             padding: 15px;
             border-top: 2px solid #d4af37;
-            font-size: 14px;
+            font-size: 13px;
             color: #aaa;
         }
     </style>
-    <!-- QRCode Generator Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
@@ -259,8 +285,10 @@
         </div>
         <div class="qr-box">
             <h3>Registration QR</h3>
-            <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan & Pay Registration Fee</p>
-            <div class="qr-img-container" id="qrcode-home"></div>
+            <p style="font-size: 11px; color: #ccc; margin-bottom: 8px;">Scan & Pay Registration Fee</p>
+            <div class="qr-img-container">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAH0AfQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="Payment QR Code">
+            </div>
             <div class="upi-id">8504823316@thecardco</div>
         </div>
     </div>
@@ -268,17 +296,17 @@
     <!-- Writing Projects Section -->
     <div id="projects-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3 style="text-align: center;">🏦 WORK FROM HOME WRITING PROJECTS 🏡</h3>
-            <p style="text-align: center; color:#ffd700;">Select your preferred writing project plan below:</p>
+            <h3 style="text-align: center; color: #ffd700;">🏦 WORK FROM HOME WRITING PROJECTS 🏡</h3>
+            <p style="text-align: center; color:#ccc; font-size: 13px;">Select your preferred writing project plan below:</p>
             <div class="grid-container">
                 
                 <div class="card">
                     <h4>📚 Project 1️⃣</h4>
                     <p>
-                        <strong>Pages:</strong> 50 Pages (Front & Back 100)<br>
-                        <strong>Duration:</strong> ⏰ 7 Days<br>
-                        <strong>Salary:</strong> 💰 ₹25,000/-<br>
-                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹499/- (Refundable)</span>
+                        <strong>Pages:</strong> 50 (100 Back)<br>
+                        <strong>Time:</strong> 7 Days<br>
+                        <strong>Salary:</strong> ₹25,000/-<br>
+                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹499/- (Refundable)</span>
                     </p>
                     <a onclick="selectProject('Project 1 (₹499 Fee)')" class="card-btn">Apply Now</a>
                 </div>
@@ -286,10 +314,10 @@
                 <div class="card">
                     <h4>📚 Project 2️⃣</h4>
                     <p>
-                        <strong>Pages:</strong> 90 Pages (Front & Back 180)<br>
-                        <strong>Duration:</strong> ⏰ 10 Days<br>
-                        <strong>Salary:</strong> 💵 ₹30,000/-<br>
-                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹750/- (Refundable)</span>
+                        <strong>Pages:</strong> 90 (180 Back)<br>
+                        <strong>Time:</strong> 10 Days<br>
+                        <strong>Salary:</strong> ₹30,000/-<br>
+                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹750/- (Refundable)</span>
                     </p>
                     <a onclick="selectProject('Project 2 (₹750 Fee)')" class="card-btn">Apply Now</a>
                 </div>
@@ -297,10 +325,10 @@
                 <div class="card">
                     <h4>📚 Project 3️⃣</h4>
                     <p>
-                        <strong>Pages:</strong> 120 Pages (Front & Back 240)<br>
-                        <strong>Duration:</strong> ⏰ 15 Days<br>
-                        <strong>Salary:</strong> 💵 ₹35,000/-<br>
-                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹1,199/- (Refundable)</span>
+                        <strong>Pages:</strong> 120 (240 Back)<br>
+                        <strong>Time:</strong> 15 Days<br>
+                        <strong>Salary:</strong> ₹35,000/-<br>
+                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹1,199/- (Refundable)</span>
                     </p>
                     <a onclick="selectProject('Project 3 (₹1199 Fee)')" class="card-btn">Apply Now</a>
                 </div>
@@ -308,18 +336,18 @@
                 <div class="card">
                     <h4>📚 Project 4️⃣</h4>
                     <p>
-                        <strong>Pages:</strong> 190 Pages (Front & Back 380)<br>
-                        <strong>Duration:</strong> ⏰ 26 Days<br>
-                        <strong>Salary:</strong> 💰 ₹40,000/-<br>
-                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹1,499/- (Refundable)</span>
+                        <strong>Pages:</strong> 190 (380 Back)<br>
+                        <strong>Time:</strong> 26 Days<br>
+                        <strong>Salary:</strong> ₹40,000/-<br>
+                        <span style="color:#ffd700;"><strong>Fee:</strong> ₹1,499/- (Refundable)</span>
                     </p>
                     <a onclick="selectProject('Project 4 (₹1499 Fee)')" class="card-btn">Apply Now</a>
                 </div>
 
             </div>
             <div style="margin-top: 20px; padding: 10px; background: #000; border: 1px dashed #d4af37; border-radius: 5px; text-align: center;">
-                <p style="color: #5cf55c; margin: 5px 0;">⚖️💵 Registration fee is 100% Refundable with your salary.</p>
-                <p style="color: #ffd700; margin: 5px 0;">🔰💵 Get 50% Advance Salary within 15 minutes after registration completion!</p>
+                <p style="color: #5cf55c; margin: 4px 0; font-size: 13px;">⚖️💵 Registration fee is 100% Refundable with your salary.</p>
+                <p style="color: #ffd700; margin: 4px 0; font-size: 13px;">🔰💵 Get 50% Advance Salary within 15 minutes after registration completion!</p>
             </div>
         </div>
     </div>
@@ -327,25 +355,58 @@
     <!-- Documents & Certificates Section -->
     <div id="documents-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3 style="text-align: center;">📜 Company Certificates & Authentic Proofs 📜</h3>
-            <p style="text-align: center; color: #ccc;">Verified Company Documents & Government Registrations:</p>
+            <h3 style="text-align: center; color: #ffd700;">📜 Company Certificates & Authentic Proofs 📜</h3>
+            <p style="text-align: center; color: #ccc; font-size: 13px;">Verified Company Documents & Government Registrations:</p>
             <div class="grid-container">
+                
                 <div class="card">
                     <h4>ISO 9001:2015 Certificate</h4>
-                    <div class="cert-frame">✅ Verified & Approved<br><span style="font-size:11px; color:#aaa;">Quality Management System</span></div>
+                    <div class="cert-frame">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAEBAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="ISO Certificate">
+                    </div>
+                    <p style="font-size: 11px; color: #aaa;">Quality Management Verified</p>
                 </div>
+
                 <div class="card">
                     <h4>MSME Udyam Registration</h4>
-                    <div class="cert-frame">✅ Govt. Recognized Enterprise<br><span style="font-size:11px; color:#aaa;">Ministry of MSME, India</span></div>
+                    <div class="cert-frame">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAEBAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="MSME Certificate">
+                    </div>
+                    <p style="font-size: 11px; color: #aaa;">Govt. of India Recognized</p>
                 </div>
+
                 <div class="card">
-                    <h4>Company Legal Authorization</h4>
-                    <div class="cert-frame">✅ Authorized Publication<br><span style="font-size:11px; color:#aaa;">Secure & Registered</span></div>
+                    <h4>Jobaaj Certificate</h4>
+                    <div class="cert-frame">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAEBAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="Jobaaj Certificate">
+                    </div>
+                    <p style="font-size: 11px; color: #aaa;">Product Management Verified</p>
                 </div>
+
                 <div class="card">
-                    <h4>Handwriting Sample Work</h4>
-                    <div class="cert-frame">✅ Standard Guidelines<br><span style="font-size:11px; color:#aaa;">Approved Format</span></div>
+                    <h4>Knowlathon Certificate</h4>
+                    <div class="cert-frame">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAEBAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="Knowlathon Certificate">
+                    </div>
+                    <p style="font-size: 11px; color: #aaa;">Cyber Security Verified</p>
                 </div>
+
+                <div class="card">
+                    <h4>IDA Certificate</h4>
+                    <div class="cert-frame">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAEBAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="IDA Certificate">
+                    </div>
+                    <p style="font-size: 11px; color: #aaa;">Indian Dental Association</p>
+                </div>
+
+                <div class="card">
+                    <h4>Writing Proof Guidelines</h4>
+                    <div class="cert-frame">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARERER4RHGQaG2RnURNRU2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAEBAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXp7fH18f3SF1henZEeHmJipork5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/aAAgof0d8WABQAAA=" alt="Writing Proof">
+                    </div>
+                    <p style="font-size: 11px; color: #aaa;">Approved Sample Format</p>
+                </div>
+
             </div>
         </div>
     </div>
@@ -360,7 +421,7 @@
 
     <!-- Registration Section -->
     <div id="register-section" class="section-container" style="display:none;">
-        <div class="content-box" style="max-width:500px; margin:0 auto;">
+        <div class="content-box" style="max-width:450px; margin:0 auto;">
             <h3 style="text-align: center;">User Registration Form</h3>
             <form id="regForm" onsubmit="handleRegister(event)">
                 <input type="text" id="fullname" placeholder="Full Name" required>
@@ -373,94 +434,4 @@
                     <option value="Project 3 (₹1199 Fee)">Project 3: 120 Pages | Salary ₹35,000 | Fee ₹1199</option>
                     <option value="Project 4 (₹1499 Fee)">Project 4: 190 Pages | Salary ₹40,000 | Fee ₹1499</option>
                 </select>
-                <textarea id="address" placeholder="Complete Postal Address" rows="3" required></textarea>
-                <button type="submit">Submit & Proceed to Payment</button>
-            </form>
-            <p id="regMsg" style="margin-top:10px; color:#ffd700; text-align:center;"></p>
-        </div>
-    </div>
-
-    <!-- Payment Section -->
-    <div id="payment-section" class="section-container" style="display:none;">
-        <div class="content-box" style="text-align:center;">
-            <h3>Official UPI Payment Details</h3>
-            <p>Pay your selected project's registration fee by scanning the QR code below:</p>
-            
-            <div class="qr-img-container" id="qrcode-payment" style="margin: 15px auto;"></div>
-
-            <div class="upi-id" style="font-size:20px; margin: 20px 0; color: #ffd700;">8504823316@thecardco</div>
-            <p style="color:#ccc; font-size:14px;">After payment, your profile will be approved within 15 minutes and 50% advance salary will be released.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Handwriting Book Publication. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Generate QR Codes Automatically for UPI
-        document.addEventListener("DOMContentLoaded", function() {
-            const upiString = "upi://pay?pa=8504823316@thecardco&pn=Handwriting%20Book%20Publication&cu=INR";
-            
-            if(document.getElementById("qrcode-home")) {
-                new QRCode(document.getElementById("qrcode-home"), {
-                    text: upiString,
-                    width: 170,
-                    height: 170
-                });
-            }
-            if(document.getElementById("qrcode-payment")) {
-                new QRCode(document.getElementById("qrcode-payment"), {
-                    text: upiString,
-                    width: 170,
-                    height: 170
-                });
-            }
-        });
-
-        function showSection(sectionId) {
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('projects-section').style.display = 'none';
-            document.getElementById('documents-section').style.display = 'none';
-            document.getElementById('about-section').style.display = 'none';
-            document.getElementById('register-section').style.display = 'none';
-            document.getElementById('payment-section').style.display = 'none';
-
-            if (sectionId === 'home') {
-                document.getElementById('home-section').style.display = 'flex';
-            } else {
-                document.getElementById(sectionId + '-section').style.display = 'block';
-            }
-        }
-
-        function selectProject(projectName) {
-            showSection('register');
-            document.getElementById('selectedProject').value = projectName;
-        }
-
-        async function handleRegister(e) {
-            e.preventDefault();
-            const fullname = document.getElementById('fullname').value;
-            const mobile = document.getElementById('mobile').value;
-            const password = document.getElementById('password').value;
-            const address = document.getElementById('address').value;
-            const project = document.getElementById('selectedProject').value;
-
-            try {
-                const res = await fetch('/api/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ fullname, mobile, password, address, project })
-                });
-                const data = await res.json();
-                document.getElementById('regMsg').innerText = data.message || "Registration successful! Proceed to payment.";
-                if(res.ok) {
-                    setTimeout(() => showSection('payment'), 1500);
-                }
-            } catch (err) {
-                document.getElementById('regMsg').innerText = "Registration failed! Please check backend.";
-            }
-        }
-    </script>
-</body>
-</html>
+                <textarea id="addr
