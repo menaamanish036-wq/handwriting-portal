@@ -165,12 +165,27 @@
         .card h4 {
             color: #ffd700;
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 16px;
         }
-        .card p {
-            font-size: 14px;
-            color: #ccc;
-            line-height: 1.6;
+        /* Direct Certificate View Box */
+        .cert-frame {
+            background: #fff;
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .cert-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .card-btn {
             background: #d4af37;
@@ -181,7 +196,7 @@
             font-size: 13px;
             border-radius: 4px;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 5px;
             cursor: pointer;
         }
         form input, form select, form textarea {
@@ -319,26 +334,137 @@
         </div>
     </div>
 
-    <!-- Documents & Certificates Section -->
+    <!-- Documents & Certificates Section (Directly visible on page) -->
     <div id="documents-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3>Company Certificates & Recognition</h3>
-            <p>Our Authentic Government Certificates & Legal Registration Proofs:</p>
+            <h3 style="text-align: center;">📜 Company Certificates & Authentic Proofs 📜</h3>
+            <p style="text-align: center; color: #ccc;">Aapke samne company ke saare verified certificates aur government proofs direct dikh rahe hain:</p>
             <div class="grid-container">
+                
                 <div class="card">
-                    <h4>ISO Certification</h4>
-                    <p>ISO 9001:2015 Quality Management Certified</p>
-                    <a href="#" class="card-btn">⬇ Download Proof</a>
-                </div>
-                <div class="card">
-                    <h4>MSME Registration</h4>
-                    <p>Govt. of India Udyam Registration Certificate</p>
-                    <a href="#" class="card-btn">⬇ Download Proof</a>
-                </div>
-                <div class="card">
-                    <h4>Company PAN & Legal Proof</h4>
-                    <p>Authorized Book Publication Registration</p>
-                    <a href="#" class="card-btn">⬇ Download Proof</a>
+                    <h4>ISO 9001:2015 Certificate</h4>
+                    <div class="cert-frame">
+                        [ ISO CERTIFICATE PREVIEW ]
+                    </div>
+                    <p style="font-size: 12px; color: #aaa;">Quality Management Verified</p>
                 </div>
 
-                
+                <div class="card">
+                    <h4>MSME Udyam Registration</h4>
+                    <div class="cert-frame">
+                        [ MSME REGISTRATION PREVIEW ]
+                    </div>
+                    <p style="font-size: 12px; color: #aaa;">Govt. of India Recognized</p>
+                </div>
+
+                <div class="card">
+                    <h4>Company PAN & License</h4>
+                    <div class="cert-frame">
+                        [ LEGAL PROOF PREVIEW ]
+                    </div>
+                    <p style="font-size: 12px; color: #aaa;">Authorized Enterprise</p>
+                </div>
+
+                <div class="card">
+                    <h4>Handwriting Sample Work</h4>
+                    <div class="cert-frame">
+                        [ WRITING SAMPLE PREVIEW ]
+                    </div>
+                    <p style="font-size: 12px; color: #aaa;">Approved Format Guidelines</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about-section" class="section-container" style="display:none;">
+        <div class="content-box">
+            <h3>About Our Publication</h3>
+            <p>Handwriting Book Publication provides genuine home-based writing assignments across India. We ensure instant registration processing, 50% advance salary transfer, and 100% refundable registration charges upon project completion.</p>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <div id="register-section" class="section-container" style="display:none;">
+        <div class="content-box" style="max-width:500px; margin:0 auto;">
+            <h3 style="text-align: center;">User Registration Form</h3>
+            <form id="regForm" onsubmit="handleRegister(event)">
+                <input type="text" id="fullname" placeholder="Full Name" required>
+                <input type="text" id="mobile" placeholder="Mobile Number" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <select id="selectedProject" required>
+                    <option value="" disabled selected>Select Writing Project Plan</option>
+                    <option value="Project 1 (₹499 Fee)">Project 1: 50 Pages | Salary ₹25,000 | Fee ₹499</option>
+                    <option value="Project 2 (₹750 Fee)">Project 2: 90 Pages | Salary ₹30,000 | Fee ₹750</option>
+                    <option value="Project 3 (₹1199 Fee)">Project 3: 120 Pages | Salary ₹35,000 | Fee ₹1199</option>
+                    <option value="Project 4 (₹1499 Fee)">Project 4: 190 Pages | Salary ₹40,000 | Fee ₹1499</option>
+                </select>
+                <textarea id="address" placeholder="Complete Postal Address" rows="3" required></textarea>
+                <button type="submit">Submit & Proceed to Payment</button>
+            </form>
+            <p id="regMsg" style="margin-top:10px; color:#ffd700; text-align:center;"></p>
+        </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="payment-section" class="section-container" style="display:none;">
+        <div class="content-box" style="text-align:center;">
+            <h3>Official UPI Payment Details</h3>
+            <p>Pay your selected project's registration fee to the official UPI ID:</p>
+            <div class="upi-id" style="font-size:20px; margin: 20px 0; color: #ffd700;">8504823316@thecardco</div>
+            <p style="color:#ccc; font-size:14px;">After payment, your profile will be approved within 15 minutes and 50% advance salary will be released.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Handwriting Book Publication. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('projects-section').style.display = 'none';
+            document.getElementById('documents-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('register-section').style.display = 'none';
+            document.getElementById('payment-section').style.display = 'none';
+
+            if (sectionId === 'home') {
+                document.getElementById('home-section').style.display = 'flex';
+            } else {
+                document.getElementById(sectionId + '-section').style.display = 'block';
+            }
+        }
+
+        function selectProject(projectName) {
+            showSection('register');
+            document.getElementById('selectedProject').value = projectName;
+        }
+
+        async function handleRegister(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const mobile = document.getElementById('mobile').value;
+            const password = document.getElementById('password').value;
+            const address = document.getElementById('address').value;
+            const project = document.getElementById('selectedProject').value;
+
+            try {
+                const res = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fullname, mobile, password, address, project })
+                });
+                const data = await res.json();
+                document.getElementById('regMsg').innerText = data.message || "Registration successful! Proceed to payment.";
+                if(res.ok) {
+                    setTimeout(() => showSection('payment'), 1500);
+                }
+            } catch (err) {
+                document.getElementById('regMsg').innerText = "Registration failed! Please check backend.";
+            }
+        }
+    </script>
+</body>
+</html>
