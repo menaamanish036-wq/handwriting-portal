@@ -138,7 +138,7 @@
             align-items: center;
             justify-content: center;
         }
-        .qr-img-container img {
+        .qr-img-container canvas, .qr-img-container img {
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -183,7 +183,7 @@
             background: #222;
             border: 2px solid #d4af37;
             border-radius: 5px;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
             color: #ffd700;
             font-size: 13px;
@@ -219,6 +219,8 @@
             color: #aaa;
         }
     </style>
+    <!-- QRCode Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
@@ -258,15 +260,7 @@
         <div class="qr-box">
             <h3>Registration QR</h3>
             <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan & Pay Registration Fee</p>
-            <div class="qr-img-container">
-                <!-- Direct embedded QR data -->
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAAsACwBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=" alt="Payment QR Code" style="display:none;" id="fallbackQr">
-                <!-- Yahan aap apna QR code image file ya URL laga sakte hain, abhi ke liye text/clean box rakha hai -->
-                <div style="font-size:12px; font-weight:bold; color:#000; text-align:center; padding:10px;">
-                    📷 Scan QR Code<br>
-                    <strong>8504823316@thecardco</strong>
-                </div>
-            </div>
+            <div class="qr-img-container" id="qrcode-home"></div>
             <div class="upi-id">8504823316@thecardco</div>
         </div>
     </div>
@@ -336,35 +330,22 @@
             <h3 style="text-align: center;">📜 Company Certificates & Authentic Proofs 📜</h3>
             <p style="text-align: center; color: #ccc;">Verified Company Documents & Government Registrations:</p>
             <div class="grid-container">
-                
                 <div class="card">
                     <h4>ISO 9001:2015 Certificate</h4>
-                    <div class="cert-frame">
-                        ✅ Verified & Approved<br><span style="font-size:11px; color:#aaa;">Quality Management System</span>
-                    </div>
+                    <div class="cert-frame">✅ Verified & Approved<br><span style="font-size:11px; color:#aaa;">Quality Management System</span></div>
                 </div>
-
                 <div class="card">
                     <h4>MSME Udyam Registration</h4>
-                    <div class="cert-frame">
-                        ✅ Govt. Recognized Enterprise<br><span style="font-size:11px; color:#aaa;">Ministry of MSME, India</span>
-                    </div>
+                    <div class="cert-frame">✅ Govt. Recognized Enterprise<br><span style="font-size:11px; color:#aaa;">Ministry of MSME, India</span></div>
                 </div>
-
                 <div class="card">
                     <h4>Company Legal Authorization</h4>
-                    <div class="cert-frame">
-                        ✅ Authorized Publication<br><span style="font-size:11px; color:#aaa;">Secure & Registered</span>
-                    </div>
+                    <div class="cert-frame">✅ Authorized Publication<br><span style="font-size:11px; color:#aaa;">Secure & Registered</span></div>
                 </div>
-
                 <div class="card">
                     <h4>Handwriting Sample Work</h4>
-                    <div class="cert-frame">
-                        ✅ Standard Guidelines<br><span style="font-size:11px; color:#aaa;">Approved Format</span>
-                    </div>
+                    <div class="cert-frame">✅ Standard Guidelines<br><span style="font-size:11px; color:#aaa;">Approved Format</span></div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -403,11 +384,9 @@
     <div id="payment-section" class="section-container" style="display:none;">
         <div class="content-box" style="text-align:center;">
             <h3>Official UPI Payment Details</h3>
-            <p>Pay your selected project's registration fee using the UPI ID below:</p>
+            <p>Pay your selected project's registration fee by scanning the QR code below:</p>
             
-            <div style="background:#fff; width:200px; height:200px; margin: 15px auto; padding:10px; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#000; font-weight:bold; text-align:center;">
-                Scan & Pay via any UPI App<br><span style="font-size:11px; font-weight:normal;">(PhonePe / GooglePay / Paytm)</span>
-            </div>
+            <div class="qr-img-container" id="qrcode-payment" style="margin: 15px auto;"></div>
 
             <div class="upi-id" style="font-size:20px; margin: 20px 0; color: #ffd700;">8504823316@thecardco</div>
             <p style="color:#ccc; font-size:14px;">After payment, your profile will be approved within 15 minutes and 50% advance salary will be released.</p>
@@ -419,6 +398,26 @@
     </footer>
 
     <script>
+        // Generate QR Codes Automatically for UPI
+        document.addEventListener("DOMContentLoaded", function() {
+            const upiString = "upi://pay?pa=8504823316@thecardco&pn=Handwriting%20Book%20Publication&cu=INR";
+            
+            if(document.getElementById("qrcode-home")) {
+                new QRCode(document.getElementById("qrcode-home"), {
+                    text: upiString,
+                    width: 170,
+                    height: 170
+                });
+            }
+            if(document.getElementById("qrcode-payment")) {
+                new QRCode(document.getElementById("qrcode-payment"), {
+                    text: upiString,
+                    width: 170,
+                    height: 170
+                });
+            }
+        });
+
         function showSection(sectionId) {
             document.getElementById('home-section').style.display = 'none';
             document.getElementById('projects-section').style.display = 'none';
@@ -464,5 +463,4 @@
         }
     </script>
 </body>
-        </html>
-        
+</html>
