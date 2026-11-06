@@ -148,7 +148,6 @@
             color: #ffd700;
             margin-top: 0;
         }
-        /* Project Cards Grid */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -166,23 +165,26 @@
         .card h4 {
             color: #ffd700;
             margin-bottom: 10px;
+            font-size: 18px;
         }
         .card p {
             font-size: 14px;
             color: #ccc;
+            line-height: 1.6;
         }
         .card-btn {
             background: #d4af37;
             color: #000;
-            padding: 6px 12px;
+            padding: 8px 15px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 13px;
             border-radius: 4px;
             display: inline-block;
             margin-top: 10px;
+            cursor: pointer;
         }
-        form input, form textarea {
+        form input, form select, form textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -195,12 +197,13 @@
         form button {
             background: #d4af37;
             color: #000;
-            padding: 10px 20px;
+            padding: 12px;
             font-weight: bold;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
+            font-size: 16px;
         }
         footer {
             background: #111;
@@ -227,7 +230,7 @@
 
     <nav>
         <a onclick="showSection('home')">Home</a>
-        <a onclick="showSection('projects')">Projects & Work</a>
+        <a onclick="showSection('projects')">Writing Projects</a>
         <a onclick="showSection('documents')">Documents & Certificates</a>
         <a onclick="showSection('about')">About Us</a>
         <a onclick="showSection('register')">Registration</a>
@@ -240,49 +243,78 @@
             <h2>Handwriting Work From Home</h2>
             <p>Apni Handwriting Skill ko Banaye Apni Income ka Zariya!</p>
             <ul class="features">
-                <li>✔ 100% Genuine Work</li>
-                <li>✔ Flexible Timing</li>
-                <li>✔ No Investment (Registration Fee Only)</li>
+                <li>✔ 100% Genuine Work From Home</li>
+                <li>✔ 50% Advance Salary within 15 Mins</li>
+                <li>✔ 100% Refundable Registration Fee</li>
+                <li>✔ Flexible Working Hours</li>
             </ul>
-            <a onclick="showSection('register')" class="apply-btn">Apply Now ➔</a>
+            <a onclick="showSection('projects')" class="apply-btn">Select Writing Project ➔</a>
         </div>
         <div class="qr-box">
-            <h3>Registration Fee</h3>
-            <h1 style="color: #fff; margin: 10px 0;">₹499</h1>
-            <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan QR Code & Pay</p>
+            <h3>Registration QR</h3>
+            <p style="font-size: 12px; color: #ccc; margin-bottom: 10px;">Scan & Pay Registration Fee</p>
             <div style="background: #fff; width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #000; font-weight: bold; font-size: 12px; border-radius: 4px;">
                 [ QR CODE SCANNER ]
             </div>
-            <div class="upi-id">UPI ID: 9460642427@okhdfcbank</div>
+            <div class="upi-id">8504823316@thecardco</div>
         </div>
     </div>
 
-    <!-- Projects Section -->
+    <!-- Writing Projects Section -->
     <div id="projects-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3>Available Handwriting Projects</h3>
-            <p>Select a handwriting project to start working from home:</p>
+            <h3 style="text-align: center;">🏦 WORK FROM HOME WRITING PROJECTS 🏡</h3>
+            <p style="text-align: center; color:#ffd700;">Select your preferred writing project plan below:</p>
             <div class="grid-container">
+                
                 <div class="card">
-                    <h4>Project A: Book Writing</h4>
-                    <p>Total Pages: 50 Pages<br>Rate: ₹40 / Page<br>Earnings: ₹2,000</p>
-                    <a onclick="showSection('register')" class="card-btn">Apply For Project</a>
+                    <h4>📚 Project 1️⃣</h4>
+                    <p>
+                        <strong>Pages:</strong> 50 Pages (Front & Back 100)<br>
+                        <strong>Duration:</strong> ⏰ 7 Days<br>
+                        <strong>Salary:</strong> 💰 ₹25,000/-<br>
+                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹499/- (Refundable)</span>
+                    </p>
+                    <a onclick="selectProject('Project 1 (₹499 Fee)')" class="card-btn">Apply Now</a>
                 </div>
+
                 <div class="card">
-                    <h4>Project B: Novel Copying</h4>
-                    <p>Total Pages: 100 Pages<br>Rate: ₹50 / Page<br>Earnings: ₹5,000</p>
-                    <a onclick="showSection('register')" class="card-btn">Apply For Project</a>
+                    <h4>📚 Project 2️⃣</h4>
+                    <p>
+                        <strong>Pages:</strong> 90 Pages (Front & Back 180)<br>
+                        <strong>Duration:</strong> ⏰ 10 Days<br>
+                        <strong>Salary:</strong> 💵 ₹30,000/-<br>
+                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹750/- (Refundable)</span>
+                    </p>
+                    <a onclick="selectProject('Project 2 (₹750 Fee)')" class="card-btn">Apply Now</a>
                 </div>
+
                 <div class="card">
-                    <h4>Project C: Assignment Work</h4>
-                    <p>Total Pages: 150 Pages<br>Rate: ₹60 / Page<br>Earnings: ₹9,000</p>
-                    <a onclick="showSection('register')" class="card-btn">Apply For Project</a>
+                    <h4>📚 Project 3️⃣</h4>
+                    <p>
+                        <strong>Pages:</strong> 120 Pages (Front & Back 240)<br>
+                        <strong>Duration:</strong> ⏰ 15 Days<br>
+                        <strong>Salary:</strong> 💵 ₹35,000/-<br>
+                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹1,199/- (Refundable)</span>
+                    </p>
+                    <a onclick="selectProject('Project 3 (₹1199 Fee)')" class="card-btn">Apply Now</a>
                 </div>
+
                 <div class="card">
-                    <h4>Project D: Premium Publication</h4>
-                    <p>Total Pages: 200 Pages<br>Rate: ₹70 / Page<br>Earnings: ₹14,000</p>
-                    <a onclick="showSection('register')" class="card-btn">Apply For Project</a>
+                    <h4>📚 Project 4️⃣</h4>
+                    <p>
+                        <strong>Pages:</strong> 190 Pages (Front & Back 380)<br>
+                        <strong>Duration:</strong> ⏰ 26 Days<br>
+                        <strong>Salary:</strong> 💰 ₹40,000/-<br>
+                        <span style="color:#ffd700;"><strong>Reg Fee:</strong> ₹1,499/- (Refundable)</span>
+                    </p>
+                    <a onclick="selectProject('Project 4 (₹1499 Fee)')" class="card-btn">Apply Now</a>
                 </div>
+
+            </div>
+            <div style="margin-top: 20px; padding: 10px; background: #000; border: 1px dashed #d4af37; border-radius: 5px; text-align: center;">
+                <p style="color: #5cf55c; margin: 5px 0;">⚖️💵 Registration fee is 100% Refundable with your salary.</p>
+                <p style="color: #ffd700; margin: 5px 0;">🔰💵 Get 50% Advance Salary within 15 minutes after registration completion!</p>
             </div>
         </div>
     </div>
@@ -290,106 +322,23 @@
     <!-- Documents & Certificates Section -->
     <div id="documents-section" class="section-container" style="display:none;">
         <div class="content-box">
-            <h3>Company Certificates & Documents</h3>
-            <p>Our Company's Authentic Certificates & Government Recognition:</p>
+            <h3>Company Certificates & Recognition</h3>
+            <p>Our Authentic Government Certificates & Legal Registration Proofs:</p>
             <div class="grid-container">
                 <div class="card">
-                    <h4>Certificate of Completion</h4>
-                    <p>ISO 9001:2015 Verified Quality Certificate</p>
-                    <a href="#" class="card-btn">⬇ Download Certificate</a>
-                </div>
-                <div class="card">
                     <h4>ISO Certification</h4>
-                    <p>Official Authentication & Registration Copy</p>
-                    <a href="#" class="card-btn">⬇ Download Certificate</a>
+                    <p>ISO 9001:2015 Quality Management Certified</p>
+                    <a href="#" class="card-btn">⬇ Download Proof</a>
                 </div>
                 <div class="card">
                     <h4>MSME Registration</h4>
-                    <p>Udyam Registration Certificate Govt of India</p>
-                    <a href="#" class="card-btn">⬇ Download Certificate</a>
+                    <p>Govt. of India Udyam Registration Certificate</p>
+                    <a href="#" class="card-btn">⬇ Download Proof</a>
                 </div>
                 <div class="card">
-                    <h4>Writing Proofs & Samples</h4>
-                    <p>Approved Sample Copies of Handwriting Work</p>
-                    <a href="#" class="card-btn">⬇ Download Sample</a>
+                    <h4>Company PAN & Legal Proof</h4>
+                    <p>Authorized Book Publication Registration</p>
+                    <a href="#" class="card-btn">⬇ Download Proof</a>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- About Us Section -->
-    <div id="about-section" class="section-container" style="display:none;">
-        <div class="content-box">
-            <h3>About Us</h3>
-            <p>Handwriting Book Publication is a trusted platform providing genuine work-from-home assignments. We offer multi-tier writing assignments with guaranteed payment transfers upon submission.</p>
-        </div>
-    </div>
-
-    <!-- Registration Section -->
-    <div id="register-section" class="section-container" style="display:none;">
-        <div class="content-box" style="max-width:500px; margin:0 auto;">
-            <h3>User Registration</h3>
-            <form id="regForm" onsubmit="handleRegister(event)">
-                <input type="text" id="fullname" placeholder="Full Name" required>
-                <input type="text" id="mobile" placeholder="Mobile Number" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <textarea id="address" placeholder="Complete Address" rows="3" required></textarea>
-                <button type="submit">Submit Registration</button>
-            </form>
-            <p id="regMsg" style="margin-top:10px; color:#ffd700; text-align:center;"></p>
-        </div>
-    </div>
-
-    <!-- Payment Section -->
-    <div id="payment-section" class="section-container" style="display:none;">
-        <div class="content-box" style="text-align:center;">
-            <h3>Payment Details</h3>
-            <p>Pay the registration fee of ₹499 using the UPI ID below:</p>
-            <div class="upi-id" style="font-size:18px; margin: 20px 0;">9460642427@okhdfcbank</div>
-            <p style="color:#ccc; font-size:14px;">Once paid, complete the registration form to start receiving your work.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Handwriting Book Publication. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function showSection(sectionId) {
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('projects-section').style.display = 'none';
-            document.getElementById('documents-section').style.display = 'none';
-            document.getElementById('about-section').style.display = 'none';
-            document.getElementById('register-section').style.display = 'none';
-            document.getElementById('payment-section').style.display = 'none';
-
-            if (sectionId === 'home') {
-                document.getElementById('home-section').style.display = 'flex';
-            } else {
-                document.getElementById(sectionId + '-section').style.display = 'block';
-            }
-        }
-
-        async function handleRegister(e) {
-            e.preventDefault();
-            const fullname = document.getElementById('fullname').value;
-            const mobile = document.getElementById('mobile').value;
-            const password = document.getElementById('password').value;
-            const address = document.getElementById('address').value;
-
-            try {
-                const res = await fetch('/api/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ fullname, mobile, password, address })
-                });
-                const data = await res.json();
-                document.getElementById('regMsg').innerText = data.message || data.error;
-            } catch (err) {
-                document.getElementById('regMsg').innerText = "Registration failed!";
-            }
-        }
-    </script>
-</body>
-                        </html>
-                                               
+                
